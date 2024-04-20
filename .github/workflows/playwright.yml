@@ -30,6 +30,7 @@ jobs:
         path: playwright-report/
         retention-days: 30
   deploy-production:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - name: Deploy in production
