@@ -1,14 +1,14 @@
 const { test, expect } = require('@playwright/test');
 //const exp = require('constants');
 test('User can add a task', async({page})=>{
-    await page.goto('http://127.0.0.1:5500/index.html');
+    await page.goto('http://127.0.0.1:5500/');
     await page.fill('#task-input', 'Test Task');
     await page.click('#add-task');
     const createdTask = await page.textContent('.task');
     expect(createdTask).toContain('Test Task');
     });
 test('User can delete a task', async({page})=>{
-    await page.goto('http://127.0.0.1:5500/index.html');
+    await page.goto('http://127.0.0.1:5500/');
     await page.fill('#task-input', 'Test Task');
     await page.click('#add-task');
     await page.click('.task .delete-task');
@@ -17,7 +17,7 @@ test('User can delete a task', async({page})=>{
     expect(deletedTasks).not.toContain('Test Task');
     });
 test('User can mark a task to complete', async({page})=>{
-    await page.goto('http://127.0.0.1:5500/index.html');
+    await page.goto('http://127.0.0.1:5500/');
     await page.fill('#task-input', 'Test Task');
     await page.click('#add-task');
     await page.click('.task .task-complete');
@@ -25,7 +25,7 @@ test('User can mark a task to complete', async({page})=>{
     expect(completedTasks).not.toBeNull();
     });
 test('User can filters tasks', async({page})=>{
-    await page.goto('http://127.0.0.1:5500/index.html');
+    await page.goto('http://127.0.0.1:5500/');
     await page.fill('#task-input', 'Test Task');
     await page.click('#add-task');
     await page.click('.task .task-complete');
