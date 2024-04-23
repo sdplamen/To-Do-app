@@ -17,6 +17,8 @@ jobs:
         node-version: 20.x
     - name: Install dependencies
       run: npm install
+    - name: Start the Aplication
+      run: npm start &
     - name: Install Playwright Browsers
       run: npx playwright install --with-deps
     - name: Run Playwright tests
