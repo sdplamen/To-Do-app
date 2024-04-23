@@ -1,4 +1,12 @@
 {
+  "name": "to-do-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "test": "npx playwright test",
+    "start": "node script.js"
+},
   "devDependencies": {
     "@playwright/test": "^1.43.1"
   }
